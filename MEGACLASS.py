@@ -53,4 +53,4 @@ while(i>0):
     if geko.HP<0:
         print("Волк пацанский победил!")
         break
-
+input()
