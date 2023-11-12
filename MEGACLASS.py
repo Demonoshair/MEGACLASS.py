@@ -21,7 +21,7 @@ class Organism:
 class Lizard(Organism):
     def __init__(self):
         self.init_org(HP=200, speed=random.randint(1,5), damage=random.randint(1,5), vid="Lizard")
-        self.speed+=5
+        self.speed+=7
         self.damage-=5
 class Volk(Organism):            #Брат брату брат, если ты своему брату не брат, то твой брат тебе не брат, АУФ    *Безумно можно быть пееервым*
     def __init__(self):
@@ -35,7 +35,7 @@ geko=Lizard()
 
 def battle(User, Vrag):
     atack=random.randint(1,20)+User.damage
-    vragKD=18+Vrag.speed
+    vragKD=15+Vrag.speed
     if atack>=vragKD:
         Vrag.HP -= random.randint(1, 20)+User.damage
         print("По ",str(Vrag.vid)," попали!")
@@ -49,8 +49,10 @@ while(i>0):
     if auf.HP<0:
         print("Ящер окаянный победил!")
         break
+    input("Нажмите enter для продолжения!")
     battle(User=auf, Vrag=geko)
     if geko.HP<0:
         print("Волк пацанский победил!")
         break
+    input("Нажмите enter для продолжения!")
 input()
